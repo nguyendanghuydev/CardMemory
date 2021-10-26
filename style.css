@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    min-height: 100vh;
+    background-image: linear-gradient(rgb(202, 57, 202),rgb(70, 64, 64));
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+h1{
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+.section{
+    display: grid;
+    grid-template-rows: repeat(4,12rem);
+    grid-template-columns: repeat(4,12rem);
+    grid-gap: 2rem;
+    perspective: 100rem;
+}
+.card{
+    box-shadow: 3px 10px 1rem rgba(0, 0, 0, .4);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s cubic-bezier(.60,.52,1,1.54);
+}
+.toggleCard{
+    transform: rotateY(180deg) skew(5deg);
+}
+.back,.img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+.img{
+    object-fit: cover;
+    object-position: top;
+}
+.back{
+    background-color: #ccc;
+    backface-visibility: hidden;
+}
+.modal{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(216, 197, 219);
+    text-align: center;
+    display: none;
+
+}
+.modal h1{
+}
+.modal img{
+    height: 80vh;
+}
